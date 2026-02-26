@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Customer Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Credit Card Customer Segmentation</h2>
+
+<form action="/predict" method="post">
+
+    <!-- ================= FINANCIAL ================= -->
+    <h3>💰 Financial Information</h3>
+
+    <label>Balance (₹0 – ₹20000)</label>
+    <input type="range" name="BALANCE" min="0" max="20000" step="100" value="2000"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>2000</output>
+
+    <label>Credit Limit (₹1000 – ₹50000)</label>
+    <input type="range" name="CREDIT_LIMIT" min="1000" max="50000" step="500" value="10000"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>10000</output>
+
+    <label>Payments (₹0 – ₹30000)</label>
+    <input type="range" name="PAYMENTS" min="0" max="30000" step="100" value="5000"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>5000</output>
+
+    <label>Minimum Payments (₹0 – ₹15000)</label>
+    <input type="range" name="MINIMUM_PAYMENTS" min="0" max="15000" step="100" value="1000"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>1000</output>
+
+    <!-- ================= PURCHASE ================= -->
+    <h3>🛒 Purchase Information</h3>
+
+    <label>Total Purchases (₹0 – ₹30000)</label>
+    <input type="range" name="PURCHASES" min="0" max="30000" step="100" value="4000"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>4000</output>
+
+    <label>One-off Purchases (₹0 – ₹20000)</label>
+    <input type="range" name="ONEOFF_PURCHASES" min="0" max="20000" step="100" value="1500"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>1500</output>
+
+    <label>Installment Purchases (₹0 – ₹20000)</label>
+    <input type="range" name="INSTALLMENTS_PURCHASES" min="0" max="20000" step="100" value="2000"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>2000</output>
+
+    <label>Cash Advance (₹0 – ₹20000)</label>
+    <input type="range" name="CASH_ADVANCE" min="0" max="20000" step="100" value="0"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0</output>
+
+    <!-- ================= TRANSACTIONS ================= -->
+    <h3>📊 Transactions</h3>
+
+    <label>Purchase Transactions (0 – 200)</label>
+    <input type="range" name="PURCHASES_TRX" min="0" max="200" step="1" value="20"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>20</output>
+
+    <label>Cash Advance Transactions (0 – 100)</label>
+    <input type="range" name="CASH_ADVANCE_TRX" min="0" max="100" step="1" value="0"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0</output>
+
+    <!-- ================= FREQUENCY ================= -->
+    <h3>📈 Frequency (0 – 1)</h3>
+
+    <label>Balance Frequency</label>
+    <input type="range" name="BALANCE_FREQUENCY" min="0" max="1" step="0.01" value="1"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>1</output>
+
+    <label>Purchase Frequency</label>
+    <input type="range" name="PURCHASES_FREQUENCY" min="0" max="1" step="0.01" value="0.6"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0.6</output>
+
+    <label>One-off Purchase Frequency</label>
+    <input type="range" name="ONEOFF_PURCHASES_FREQUENCY" min="0" max="1" step="0.01" value="0.4"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0.4</output>
+
+    <label>Installment Purchase Frequency</label>
+    <input type="range" name="PURCHASES_INSTALLMENTS_FREQUENCY" min="0" max="1" step="0.01" value="0.5"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0.5</output>
+
+    <label>Cash Advance Frequency</label>
+    <input type="range" name="CASH_ADVANCE_FREQUENCY" min="0" max="1" step="0.01" value="0"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0</output>
+
+    <label>Full Payment Percentage</label>
+    <input type="range" name="PRC_FULL_PAYMENT" min="0" max="1" step="0.01" value="0"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>0</output>
+
+    <!-- ================= TENURE ================= -->
+    <h3>📅 Account Duration</h3>
+
+    <label>Tenure (6 – 12 months)</label>
+    <input type="range" name="TENURE" min="6" max="12" step="1" value="12"
+           oninput="this.nextElementSibling.value = this.value">
+    <output>12</output>
+
+    <br><br>
+    <button type="submit">Predict Cluster</button>
+
+</form>
+
+</body>
+</html>
